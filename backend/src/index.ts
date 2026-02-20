@@ -112,6 +112,14 @@ app.post('/api/auth/login', async (req, res) => {
   res.json({ token, user: { id: user.id, email: user.email, name: user.name, role: user.role } });
 });
 
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
+app.get('/api/auth/me', authMiddleware, async (req: any, res) => {
+>>>>>>> origin/feature/devops
+});
+
 app.get('/api/auth/me', authMiddleware, async (req: any, res) => {
   const result = await pool.query('SELECT id, email, name, role FROM users WHERE id = $1', [req.user.id]);
   res.json(result.rows[0]);

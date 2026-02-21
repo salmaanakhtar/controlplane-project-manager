@@ -31,10 +31,24 @@ Things like:
 - Default speaker: Kitchen HomePod
 ```
 
+## GitOps
+
+### Repositories
+
+- **controlplane-project-manager**: https://github.com/salmaanakhtar/controlplane-project-manager
+
+### Branch Protection
+
+- main branch requires PRs
+- 1 approval required
+- No direct pushes
+
+### Deployed Apps
+
+- pm.salmaan.dev
+- console.salmaan.dev (Tailscale only)
+- monitoring.salmaan.dev
+
 ## Why Separate?
 
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
-
----
-
-Add whatever helps you do your job. This is your cheat sheet.
+Skills are shared.

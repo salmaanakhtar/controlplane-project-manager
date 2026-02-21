@@ -6,6 +6,10 @@ import authRoutes from './routes/auth.js';
 import projectRoutes from './routes/projects.js';
 import taskRoutes from './routes/tasks.js';
 import healthRoutes from './routes/health.js';
+import githubRoutes from './routes/github.js';
+import prometheusRoutes from './routes/prometheus.js';
+import sessionsRoutes from './routes/sessions.js';
+import cronRoutes from './routes/cron.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -24,6 +28,10 @@ app.use('/ready', healthRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api', taskRoutes);
+app.use('/api', githubRoutes);
+app.use('/api', prometheusRoutes);
+app.use('/api', sessionsRoutes);
+app.use('/api', cronRoutes);
 
 // Error handling middleware
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
